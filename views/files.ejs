@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Uploaded Files</title>
+    <link rel="stylesheet" href="/css/files.css">
+
+</head>
+
+<body>
+    <div id="main-container">
+    <h1>Upload CSV</h1>
+
+    <form method="post" action="/upload" enctype="multipart/form-data">
+        <input type="file" name="csvfile">
+        <button type="submit">Upload</button>
+    </form>
+    <h1>Uploaded Files</h1>
+    <div id="file-list"> 
+
+    <% if (files.length===0) { %>
+        <p>No files uploaded yet.</p>
+        <% } else { %>
+            <ul>
+                <% for (let i=0; i < files.length; i++) { %>
+                    <li><a href="/display?file=<%= encodeURIComponent(files[i]) %>">
+                            <%= files[i] %>
+                        </a></li>
+                    <% } %>
+            </ul>
+            <% } %>
+            </div>
+     </div>              
+</body>
+
+</html>

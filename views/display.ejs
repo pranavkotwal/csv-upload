@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>CSV Display</title>
+    <link rel="stylesheet" href="/css/display.css">
+
+</head>
+
+<body>
+   
+
+    <h1>CSV Display</h1>
+    <form>
+        <input type="text" id="searchInput" onkeyup="search()" placeholder="Search in CSV..">
+    </form>
+
+    <table>
+        <thead>
+            <tr>
+                <% Object.keys(data[0]).forEach(key=> { %>
+                    <th>
+                        <%= key %>
+                    </th>
+                    <% }) %>
+            </tr>
+        </thead>
+        <tbody id="dataTable">
+            <% data.forEach(row=> { %>
+                <tr class="dataRow">
+                    <% Object.values(row).forEach(value=> { %>
+                        <td>
+                            <%= value %>
+                        </td>
+                        <% }) %>
+                </tr>
+                <% }) %>
+        </tbody>
+    </table>
+
+    <a href="/">Back to Files</a>
+    <script src="/js/search.js"></script>
+</body>
+
+</html>
