@@ -1,5 +1,5 @@
 ## About 
-Upload-csv app with two views
+csv-upload app with two views
 - Home View for showing upload form and uploaded files
 - display view for displaying the csv in table form
 
